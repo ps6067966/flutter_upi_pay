@@ -65,19 +65,9 @@ class UpiPayPlugin: FlutterPlugin, MethodCallHandler, ActivityAware, PluginRegis
       */
       var uriStr: String? = "upi://pay?pa=" + pa +
               "&pn=" + Uri.encode(pn) +
-              "&tr=" + Uri.encode(tr) +
               "&am=" + Uri.encode(am) +
-              "&cu=" + Uri.encode(cu)
-      if(url != null) {
-        uriStr += ("&url=" + Uri.encode(url))
-      }
-      if(mc != null) {
-        uriStr += ("&mc=" + Uri.encode(mc))
-      }
-      if(tn != null) {
-        uriStr += ("&tn=" + Uri.encode(tn))
-      }
-      uriStr += "&mode=00" // &orgid=000000"
+              "&tn=Payment" +
+              "&cu=INR"
       val uri = Uri.parse(uriStr)
       // Log.d("flutter_upi_india", "initiateTransaction URI: " + uri.toString())
 
